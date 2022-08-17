@@ -1,8 +1,8 @@
 # public subnet
-resource "aws_subnet" "subnet_public_a" {
+resource "aws_subnet" "subnet" {
   vpc_id            = var.vpc_id
-  cidr_block        = "10.0.3.0/24"
-  availability_zone = "ap-northeast-2a"
+  cidr_block        = var.cidr_block
+  availability_zone = var.availability_zone
 
   tags = {
     Name = "subnet_public_a"
