@@ -12,3 +12,7 @@ variable "availability_zone" {
   type = string
 }
 
+variable "enable_public" {
+  type = bool
+}
+

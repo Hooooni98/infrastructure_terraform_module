@@ -7,3 +7,12 @@ resource "aws_vpc" "vpc" {
     Name = var.vpc_name
   }
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = var.vpc_id
+}
+
+resource "aws_internet_gateway_attachment" "igw_attachment" {
+  internet_gateway_id = aws_internet_gateway.example.id
+  vpc_id              = aws_vpc.example.id
+}
